@@ -4,23 +4,20 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the application...'
-                sh 'npm install'
-                sh 'npm run build'
+                build 'PES2UG22CS253-1'
+                sh 'g++ main.cpp -o output'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Running tests...'
-                sh 'npm test'
+                sh './output'
             }
         }
 
         stage('Deploy') {
             steps {
-                echo 'Deploying the application...'
-                sh './deploy.sh' 
+                echo 'Deploy' 
             }
         }
     }
