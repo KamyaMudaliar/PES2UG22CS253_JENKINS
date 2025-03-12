@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     echo "Running tests..."
-                    sh "cd /var/jenkins_home/workspace/PES2UG22CS256/main/ && ./hello_exec"
+                    sh "cd ${WORKSPACE}/main && ./hello_exec"
                 }
             }
         }
